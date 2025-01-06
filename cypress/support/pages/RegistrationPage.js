@@ -1,6 +1,6 @@
 class RegistrationPage {
     visit() {
-      cy.visit('/register');
+      cy.visit('/');
     }
   
     fillForm({ username, email, password }) {
