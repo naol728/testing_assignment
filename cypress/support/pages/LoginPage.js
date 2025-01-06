@@ -1,25 +1,19 @@
-import LoginPage from '../support/pages/LoginPage';
+class LoginPage {
+  visit() {
+    cy.visit("/login");
+  }
 
-describe('Login Page Tests', () => {
-  beforeEach(() => {
-    LoginPage.visit();
-  });
+  login(username, password) {
+    cy.get("[name='username']").clear();
+    cy.get("[name='password']").clear();
+    cy.get("[name = 'username']").type(username);
+    cy.get("[name = 'password']").type(password);
+    cy.get(".btn").click();
+  }
 
-  it('should log in with valid credentials', () => {
-    cy.fixture('testData').then((data) => {
-      LoginPage.fillUsername(data.validUser.username);
-      LoginPage.fillPassword(data.validUser.password);
-      LoginPage.submit();
-      cy.url().should('include', '/dashboard');
-    });
-  });
+  verifyErrorMessage(expectedMessage) {
+    cy.get(".alert  p").should("contain", expectedMessage);
+  }
+}
 
-  it('should show an error for invalid credentials', () => {
-    cy.fixture('testData').then((data) => {
-      LoginPage.fillUsername(data.invalidUser.username);
-      LoginPage.fillPassword(data.invalidUser.password);
-      LoginPage.submit();
-      LoginPage.verifyErrorMessage('Invalid username or password');
-    });
-  });
-});
+export default LoginPage;

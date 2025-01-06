@@ -1,9 +1,17 @@
 {
   "validUser": {
-    "username": "testuser",
-    "password": "password123"
+    "username": "administrator",
+    "password": "administrator"
   },
-  "invalidUser": {
+  "invalidusername": {
+    "username": "wronguser",
+    "password": "administrator"
+  },
+  "invalidpasword": {
+    "username": "administrator",
+    "password": "wrongpass"
+  },
+  "invalidusenamepassword": {
     "username": "wronguser",
     "password": "wrongpass"
   },

@@ -1,25 +1,38 @@
-import LoginPage from '../support/pages/LoginPage';
+import LoginPage from "../support/pages/LoginPage";
 
-describe('Login Page Tests', () => {
+describe("Login Page Tests", () => {
+  const loginPage = new LoginPage();
   beforeEach(() => {
-    LoginPage.visit();
+    loginPage.visit();
   });
 
-  it('should log in with valid credentials', () => {
-    cy.fixture('testData').then((data) => {
-      LoginPage.fillUsername(data.validUser.username);
-      LoginPage.fillPassword(data.validUser.password);
-      LoginPage.submit();
-      cy.url().should('include', '/dashboard');
+  it("should log in with valid credentials", () => {
+    cy.fixture("testData").then((data) => {
+      loginPage.login(data.validUser.username, data.validUser.password);
+      cy.url().should("include", "/home");
     });
   });
 
-  it('should show an error for invalid credentials', () => {
-    cy.fixture('testData').then((data) => {
-      LoginPage.fillUsername(data.invalidUser.username);
-      LoginPage.fillPassword(data.invalidUser.password);
-      LoginPage.submit();
-      LoginPage.verifyErrorMessage('Invalid username or password');
+    it("should show an error for invalid usename and password", () => {
+      cy.fixture("testData").then((data) => {
+        loginPage.login(data.invalidusenamepassword.username, data.invalidusenamepassword.password);
+        loginPage.verifyErrorMessage("We couldn't log you in. Please check your username or password and try again.");
+        cy.url().should("include", "/login?error=1");
+      });
     });
-  });
+
+    it("should show an error for invalid password and valid username", () => {
+        cy.fixture("testData").then((data) => {
+          loginPage.login(data.invalidpasword.username, data.invalidpasword.password);
+          loginPage.verifyErrorMessage("We couldn't log you in. Please check your username or password and try again.");
+          cy.url().should("include", "/login?error=1");
+        });
+      });
+    it("should show an error for valid password and invalid username", () => {
+        cy.fixture("testData").then((data) => {
+          loginPage.login(data.invalidusername.username, data.invalidusername.password);
+          loginPage.verifyErrorMessage("We couldn't log you in. Please check your username or password and try again.");
+          cy.url().should("include", "/login?error=1");
+        });
+      });
 });
