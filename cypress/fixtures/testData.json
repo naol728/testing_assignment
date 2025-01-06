@@ -1,0 +1,28 @@
+{
+  "validUser": {
+    "username": "administrator",
+    "password": "administrator"
+  },
+  "invalidusername": {
+    "username": "wronguser",
+    "password": "administrator"
+  },
+  "invalidpasword": {
+    "username": "administrator",
+    "password": "wrongpass"
+  },
+  "invalidusenamepassword": {
+    "username": "wronguser",
+    "password": "wrongpass"
+  },
+  "newUser": {
+    "username": "newuser",
+    "email": "newuser@example.com",
+    "password": "newpassword123"
+  },
+  "profileUpdate": {
+    "firstName": "UpdatedName",
+    "lastName": "UpdatedLastName"
+  },
+  "comment": "This is a test comment."
+}
