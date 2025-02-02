@@ -3,14 +3,6 @@
     "username": "administrator",
     "password": "administrator"
   },
-  "invalidusername": {
-    "username": "wronguser",
-    "password": "administrator"
-  },
-  "invalidpasword": {
-    "username": "administrator",
-    "password": "wrongpass"
-  },
   "invalidusenamepassword": {
     "username": "wronguser",
     "password": "wrongpass"
@@ -24,5 +16,50 @@
     "firstName": "UpdatedName",
     "lastName": "UpdatedLastName"
   },
-  "comment": "This is a test comment."
+  "comment": "i am ayele",
+
+  "validRegistration": {
+    "firstName": "AbelccCCCC",
+    "lastName": "Nesredincc",
+    "email": "abbbbbbbbbbbBelnesredDinFFcc@gmail.com",
+    "reenterEmail": "abbbbbbbbbbbBelnesredDinFFcc@gmail.com",
+    "username": "abbbbbbbBBBNNbCC00l202554",
+    "password": "strongPassword123!",
+    "birthdate": "1995-06-10",
+    "gender": "Male",
+    "successMessage": "Your account has been registered! We have sent you an account activation email. If you didn't receive the email, please check your spam/junk folder."
+  },
+  "usernameTaken": {
+    "firstName": "Hanacc",
+    "lastName": "Tesfayecc",
+    "email": "hHanatesfayecc@gmail.com",
+    "reenterEmail": "hHanatesfayecc@gmail.com",
+    "username": "hhh123",
+    "password": "securePass456!cc",
+    "birthdate": "1992-08-05",
+    "gender": "Female",
+    "errorMessage": "The following username is taken. Please select a different one."
+  },
+  "shortPassword": {
+    "firstName": "Samuelcc",
+    "lastName": "Gebremedhincc",
+    "email": "samuelgebremedhincc@gmail.com",
+    "reenterEmail": "samuelgebremedhincc@gmail.com",
+    "username": "samuelcc2023",
+    "password": "123",
+    "birthdate": "1990-11-25",
+    "gender": "Male",
+    "errorMessage": "The password must be more than 5 characters."
+  },
+  "termsNotAgreed": {
+    "firstName": "Martacc",
+    "lastName": "Hailucc",
+    "email": "martahailucc@gmail.com",
+    "reenterEmail": "martahailucc@gmail.com",
+    "username": "martacc12345",
+    "password": "MartaPasscc789!",
+    "birthdate": "1996-09-10",
+    "gender": "Female",
+    "errorMessage": "You must confirm that you agree with our website Terms and Privacy"
+  }
 }

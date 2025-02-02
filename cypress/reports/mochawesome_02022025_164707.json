@@ -1,0 +1,170 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-02T13:46:40.206Z",
+    "end": "2025-02-02T13:47:07.273Z",
+    "duration": 27067,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4c417780-cd4f-426c-b2f6-ef698ffb10b6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\registrationTest.cy.js",
+      "file": "cypress\\e2e\\registrationTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "033d1466-00b3-4aa9-921b-32e11668d413",
+          "title": "Reggestration Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should register a user successfully with valid details",
+              "fullTitle": "Reggestration Test should register a user successfully with valid details",
+              "timedOut": null,
+              "duration": 8527,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = _testData.default.validRegistration;\n_RegistrationPage.default.fillFirstName(data.firstName);\n_RegistrationPage.default.fillLastName(data.lastName);\n_RegistrationPage.default.fillEmail(data.email);\n_RegistrationPage.default.fillReenterEmail(data.reenterEmail);\n_RegistrationPage.default.fillUsername(data.username);\n_RegistrationPage.default.fillPassword(data.password);\n_RegistrationPage.default.getfillBirthdate(data.birthdate);\n_RegistrationPage.default.selectGender(data.gender);\n_RegistrationPage.default.confirmTermsAndConditions();\n_RegistrationPage.default.clickCreateAccount();\n_RegistrationPage.default.assertSuccessMessage(data.successMessage);",
+              "err": {},
+              "uuid": "766dcc84-f2f6-4ff7-b2a3-0f44c611606e",
+              "parentUUID": "033d1466-00b3-4aa9-921b-32e11668d413",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "it should show username taken",
+              "fullTitle": "Reggestration Test it should show username taken",
+              "timedOut": null,
+              "duration": 5475,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = _testData.default.usernameTaken;\n_RegistrationPage.default.fillFirstName(data.firstName);\n_RegistrationPage.default.fillLastName(data.lastName);\n_RegistrationPage.default.fillEmail(data.email);\n_RegistrationPage.default.fillReenterEmail(data.reenterEmail);\n_RegistrationPage.default.fillUsername(data.username);\n_RegistrationPage.default.fillPassword(data.password);\n_RegistrationPage.default.getfillBirthdate(data.birthdate);\n_RegistrationPage.default.selectGender(data.gender);\n_RegistrationPage.default.confirmTermsAndConditions();\n_RegistrationPage.default.clickCreateAccount();\n_RegistrationPage.default.assertErrorMessage(data.errorMessage);",
+              "err": {},
+              "uuid": "347e74a5-75fe-49ab-9c7b-2a64bb55b111",
+              "parentUUID": "033d1466-00b3-4aa9-921b-32e11668d413",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display password too short error",
+              "fullTitle": "Reggestration Test should display password too short error",
+              "timedOut": null,
+              "duration": 5915,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = _testData.default.shortPassword;\n_RegistrationPage.default.fillFirstName(data.firstName);\n_RegistrationPage.default.fillLastName(data.lastName);\n_RegistrationPage.default.fillEmail(data.email);\n_RegistrationPage.default.fillReenterEmail(data.reenterEmail);\n_RegistrationPage.default.fillUsername(data.username);\n_RegistrationPage.default.fillPassword(data.password);\n_RegistrationPage.default.getfillBirthdate(data.birthdate);\n_RegistrationPage.default.selectGender(data.gender);\n_RegistrationPage.default.confirmTermsAndConditions();\n_RegistrationPage.default.clickCreateAccount();\n_RegistrationPage.default.assertErrorMessage(data.errorMessage);",
+              "err": {},
+              "uuid": "09a9f879-7385-4b6a-be7c-a0ad365ecef2",
+              "parentUUID": "033d1466-00b3-4aa9-921b-32e11668d413",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display terms not agreed error",
+              "fullTitle": "Reggestration Test should display terms not agreed error",
+              "timedOut": null,
+              "duration": 5875,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = _testData.default.termsNotAgreed;\n_RegistrationPage.default.fillFirstName(data.firstName);\n_RegistrationPage.default.fillLastName(data.lastName);\n_RegistrationPage.default.fillEmail(data.email);\n_RegistrationPage.default.fillReenterEmail(data.reenterEmail);\n_RegistrationPage.default.fillUsername(data.username);\n_RegistrationPage.default.fillPassword(data.password);\n_RegistrationPage.default.getfillBirthdate(data.birthdate);\n_RegistrationPage.default.selectGender(data.gender);\n// Not agreeing to terms\n_RegistrationPage.default.clickCreateAccount();\n_RegistrationPage.default.assertErrorMessage(data.errorMessage);",
+              "err": {},
+              "uuid": "7f6d9974-a554-4b83-97b5-2ba852e230bb",
+              "parentUUID": "033d1466-00b3-4aa9-921b-32e11668d413",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "766dcc84-f2f6-4ff7-b2a3-0f44c611606e",
+            "347e74a5-75fe-49ab-9c7b-2a64bb55b111",
+            "09a9f879-7385-4b6a-be7c-a0ad365ecef2",
+            "7f6d9974-a554-4b83-97b5-2ba852e230bb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25792,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss",
+        "embeddedScreenshots": true,
+        "setupNodeEvents": "[Function setupNodeEvents]",
+        "defaultCommandTimeout": 15000,
+        "requestTimeout": 30000,
+        "pageLoadTimeout": 6000000000,
+        "screenshotOnRunFailure": true,
+        "retries": 2
+      },
+      "version": "6.2.0"
+    }
+  }
+}
