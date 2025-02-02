@@ -1,18 +1,38 @@
 class LoginPage {
+  constructor() {
+    this.usernameField = "[name='username']";
+    this.passwordField = "[name='password']";
+    this.loginButton = ".btn";
+    this.errorAlert = ".alert";
+  }
+
   visit() {
     cy.visit("/login");
   }
 
+  clearFields() {
+    cy.get(this.usernameField).clear();
+    cy.get(this.passwordField).clear();
+  }
+
+  fillCredentials(username, password) {
+    this.clearFields();
+    if (username) cy.get(this.usernameField).type(username);
+    if (password) cy.get(this.passwordField).type(password);
+  }
+
   login(username, password) {
-    cy.get("[name='username']").clear();
-    cy.get("[name='password']").clear();
-    cy.get("[name = 'username']").type(username);
-    cy.get("[name = 'password']").type(password);
-    cy.get(".btn").click();
+    this.fillCredentials(username, password);
+    cy.get(this.loginButton).click();
+  }
+
+  loginEmpty() {
+    this.clearFields();
+    cy.get(this.loginButton).click();
   }
 
   verifyErrorMessage(expectedMessage) {
-    cy.get(".alert  p").should("contain", expectedMessage);
+    cy.get(this.errorAlert).should("contain", expectedMessage);
   }
 }
 

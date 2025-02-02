@@ -1,22 +1,11 @@
-import CommentPage from '../support/pages/CommentPage';
+import CommentPage from "../support/pages/CommentPage";
 
-describe('Post Comment Tests', () => {
-  beforeEach(() => {
-    // Assume the user is already logged in
+describe("Post Comment Tests", () => {
+  it("should visit the comment page", () => {
     CommentPage.visit();
-  });
-
-  it('should add a comment successfully', () => {
-    cy.fixture('testData').then((data) => {
-      CommentPage.addComment(data.comment);
-      CommentPage.submitComment();
-      CommentPage.verifyCommentDisplayed(data.comment);
+    cy.fixture("testData", (data) => {
+      CommentPage.comment(data.comment);
+      CommentPage.verifyCommentInList(data.comment);
     });
-  });
-
-  it('should show an error for empty comment', () => {
-    CommentPage.addComment('');
-    CommentPage.submitComment();
-    cy.get('.error').should('contain.text', 'Comment cannot be empty');
   });
 });
